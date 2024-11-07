@@ -29,17 +29,17 @@ def main():
 
     # Goal 2: Calculate Metrics per NPI and NDC
     metrics = calculate_metrics(filtered_claims, filtered_reverts)
-    with open('outputs/metrics_output.json', 'w') as outfile:
+    with open('output/metrics_output.json', 'w') as outfile:
         json.dump(metrics, outfile, indent=4)
 
     # Goal 3: Calculate Top 2 Chain Recommendations per Drug
     recommendations = calculate_chain_recommendations(filtered_claims, pharmacies)
-    with open('outputs/recommendations_output.json', 'w') as outfile:
+    with open('output/recommendations_output.json', 'w') as outfile:
         json.dump(recommendations, outfile, indent=4)
 
     # Goal 4: Identify Most Common Quantities Prescribed per Drug
     common_quantities = calculate_common_quantities(filtered_claims)
-    with open('outputs/common_quantities_output.json', 'w') as outfile:
+    with open('output/common_quantities_output.json', 'w') as outfile:
         json.dump(common_quantities, outfile, indent=4)
 
 if __name__ == "__main__":
